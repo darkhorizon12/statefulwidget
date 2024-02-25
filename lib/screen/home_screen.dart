@@ -13,12 +13,24 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int number = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 50.0,
-      height: 50.0,
-      color: widget.color,
+    return GestureDetector(
+      onTap: () => setState(() {
+        number++;
+      }),
+      child: Container(
+        width: 50.0,
+        height: 50.0,
+        color: widget.color,
+        child: Center(
+          child: Text(
+            number.toString(),
+          ),
+        ),
+      ),
     );
   }
 }
